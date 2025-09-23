@@ -127,7 +127,7 @@ const uint16_t PROGMEM combo3[] = { KC_8, KC_9, KC_7, COMBO_END};
 const uint16_t PROGMEM combo4[] = { KC_PAGE_UP, KC_UP, KC_PGDN, COMBO_END};
 const uint16_t PROGMEM combo5[] = { KC_X, MT(MOD_MEH, KC_D), KC_C, COMBO_END};
 
-combo_t key_combos[COMBO_COUNT] = {
+combo_t key_combos[6] = {
     COMBO(combo0, KC_ESCAPE),
     COMBO(combo1, KC_ESCAPE),
     COMBO(combo2, RALT(RCTL(RSFT(KC_GRAVE)))),
