@@ -3,6 +3,7 @@
     "build_targets": [
         ["bastardkb/charybdis/4x6", "vendor"],
         ["bastardkb/charybdis/3x6", "vendor"],
+        ["bastardkb/charybdis/3x6", "custom"],
         ["bastardkb/charybdis/3x5", "vendor"],
         ["bastardkb/dilemma/4x6_4", "vendor"],
         ["bastardkb/dilemma/3x5_3", "vendor"],
