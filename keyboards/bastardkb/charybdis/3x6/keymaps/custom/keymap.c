@@ -52,13 +52,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                           KC_TAB, MT(MOD_LGUI, KC_ENT),OSM(MOD_LSFT),               KC_BSPC,        LT(4, KC_SPACE)
   ),
   [LAYER_LOWER] = LAYOUT(
-    QK_BOOT, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_LBRC,        KC_7,           KC_8,           KC_9,           KC_BSLS,        KC_TRNS,
+    QK_BOOT, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_LBRC,        KC_7,           KC_8,           KC_9,           KC_BSLS,        QK_BOOT,
     KC_TRNS, KC_TRNS, KC_LEFT_SHIFT,  KC_TRNS, KC_LEFT_GUI, KC_TRNS,                                 KC_RBRC,        KC_4,           KC_5,           KC_6,           KC_MINUS,       KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_TRNS,        KC_1,           KC_2,           KC_3,           KC_EQUAL,       KC_TRNS,
                                       KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_TRNS, KC_0
   ),
   [LAYER_RAISE] = LAYOUT(
-    KC_TRNS, KC_TRNS, KC_PGUP,     KC_UP,          KC_PGDN,        KC_MNXT,                                KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS,        KC_TRNS, QK_BOOT,
+    QK_BOOT, KC_TRNS, KC_PGUP,     KC_UP,          KC_PGDN,        KC_MNXT,                                KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS,        KC_TRNS, QK_BOOT,
     KC_TRNS, KC_TRNS, KC_LEFT,     KC_DOWN,        KC_RIGHT,       KC_MPLY,                                KC_TRNS, KC_RIGHT_GUI, KC_TRNS, KC_RIGHT_SHIFT, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_VOLD,     KC_MUTE,        KC_VOLU,        KC_MPRV,                                KC_TRNS, KC_RIGHT_ALT, KC_TRNS, KC_RIGHT_CTRL,  KC_TRNS, KC_TRNS,
                                    KC_TRNS,        KC_TRNS,        KC_TRNS,                                KC_TRNS, KC_TRNS
