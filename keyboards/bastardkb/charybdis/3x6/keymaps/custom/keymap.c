@@ -46,28 +46,28 @@ static uint16_t auto_pointer_layer_timer = 0;
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_BASE] = LAYOUT(
-    KC_GRAVE,       KC_Q,               KC_W,               KC_F,           KC_P,               KC_B,               KC_J,           KC_L,               KC_U,           KC_Y,               KC_SCLN,            KC_BSLS,
-    KC_TAB,         MT(MOD_LALT, KC_A), MT(MOD_LSFT, KC_R), LT(1, KC_S),    MT(MOD_LGUI, KC_T), KC_G,               KC_M,           MT(MOD_RGUI, KC_N), LT(2, KC_E),    MT(MOD_RSFT, KC_I), MT(MOD_RCTL, KC_O), KC_QUOTE,
-    KC_LBRC,        KC_Z,               KC_X,               KC_C,           MT(MOD_MEH, KC_D),  KC_V,               KC_K,           MT(MOD_MEH, KC_H),        KC_COMMA,       KC_DOT,             KC_SLASH,           KC_RBRC,
-                                                          KC_TAB, MT(MOD_LGUI, KC_ENT),OSM(MOD_LSFT),               KC_BSPC,        LT(4, KC_SPACE)
+    KC_TRNS, KC_Q,               KC_W,               KC_F,                 KC_P,                KC_B,               KC_J,           KC_L,               KC_U,           KC_Y,               KC_SCLN,            KC_TRNS,
+    KC_TRNS, MT(MOD_LALT, KC_A), MT(MOD_LSFT, KC_R), LT(1, KC_S),          MT(MOD_LGUI, KC_T),  KC_G,               KC_M,           MT(MOD_RGUI, KC_N), LT(2, KC_E),    MT(MOD_RSFT, KC_I), MT(MOD_RCTL, KC_O), KC_TRNS,
+    KC_TRNS, KC_Z,               KC_X,               KC_C,                 MT(MOD_MEH, KC_D),   KC_V,               KC_K,           MT(MOD_MEH, KC_H),  KC_COMMA,       KC_DOT,             KC_SLASH,           KC_TRNS,
+                                                     MT(MOD_LGUI, KC_ENT), OSM(MOD_LSFT),       KC_TRNS,            KC_BSPC,        LT(4, KC_SPACE)
   ),
   [LAYER_LOWER] = LAYOUT(
-    QK_BOOT, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_LBRC,        KC_7,           KC_8,           KC_9,           KC_BSLS,        QK_BOOT,
-    KC_TRNS, KC_TRNS, KC_LEFT_SHIFT,  KC_TRNS, KC_LEFT_GUI, KC_TRNS,                                 KC_RBRC,        KC_4,           KC_5,           KC_6,           KC_MINUS,       KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_TRNS,        KC_1,           KC_2,           KC_3,           KC_EQUAL,       KC_TRNS,
+    QK_BOOT, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_PIPE,        KC_7,           KC_8,           KC_9,           KC_BSLS,       QK_BOOT,
+    KC_TRNS, KC_TRNS, KC_LEFT_SHIFT,  KC_TRNS, KC_LEFT_GUI, KC_TRNS,                                 KC_EQUAL,       KC_4,           KC_5,           KC_6,           KC_MINUS,      KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_PLUS,        KC_1,           KC_2,           KC_3,           KC_UNDS,       KC_TRNS,
                                       KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_TRNS, KC_0
   ),
   [LAYER_RAISE] = LAYOUT(
-    QK_BOOT, KC_TRNS, KC_PGUP,     KC_UP,          KC_PGDN,        KC_MNXT,                                KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS,        KC_TRNS, QK_BOOT,
+    QK_BOOT, KC_TRNS, KC_LBRC,     KC_UP,          KC_RBRC,        KC_MNXT,                                KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS,        KC_TRNS, QK_BOOT,
     KC_TRNS, KC_TRNS, KC_LEFT,     KC_DOWN,        KC_RIGHT,       KC_MPLY,                                KC_TRNS, KC_RIGHT_GUI, KC_TRNS, KC_RIGHT_SHIFT, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_VOLD,     KC_MUTE,        KC_VOLU,        KC_MPRV,                                KC_TRNS, KC_RIGHT_ALT, KC_TRNS, KC_RIGHT_CTRL,  KC_TRNS, KC_TRNS,
                                    KC_TRNS,        KC_TRNS,        KC_TRNS,                                KC_TRNS, KC_TRNS
   ),
   [LAYER_POINTER] = LAYOUT(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               DPI_MOD, DPI_RMOD, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS,  DRGSCRL, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_BTN1,  KC_BTN3, KC_BTN2, KC_TRNS, KC_TRNS,
-                               KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS,  DRGSCRL, KC_TRNS, LGUI(KC_RBRC), KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_BTN1,  KC_BTN3, KC_BTN2, LGUI(KC_LBRC), KC_TRNS,
+                               KC_TRNS, DRGSCRL, KC_TRNS,                               KC_TRNS, KC_TRNS
   ),
 };
 // clang-format on
@@ -122,19 +122,74 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
 
 const uint16_t PROGMEM combo0[] = { KC_W, KC_F, KC_P, COMBO_END};
 const uint16_t PROGMEM combo1[] = { KC_U, KC_Y, KC_L, COMBO_END};
-const uint16_t PROGMEM combo2[] = { MT(MOD_MEH, KC_H), KC_DOT, KC_COMMA, COMBO_END};
-const uint16_t PROGMEM combo3[] = { KC_8, KC_9, KC_7, COMBO_END};
-const uint16_t PROGMEM combo4[] = { KC_PAGE_UP, KC_UP, KC_PGDN, COMBO_END};
-const uint16_t PROGMEM combo5[] = { KC_X, MT(MOD_MEH, KC_D), KC_C, COMBO_END};
+const uint16_t PROGMEM combo2[] = { KC_U, KC_Y, COMBO_END};
+const uint16_t PROGMEM combo3[] = { KC_W, KC_F, COMBO_END};
+const uint16_t PROGMEM combo4[] = { MT(MOD_LSFT, KC_R), LT(1, KC_S), COMBO_END};
+const uint16_t PROGMEM combo5[] = { MT(MOD_RGUI, KC_N), LT(2, KC_E), COMBO_END};
+const uint16_t PROGMEM combo6[] = { LT(2, KC_E), MT(MOD_RSFT, KC_I), COMBO_END};
 
-combo_t key_combos[6] = {
+combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_ESCAPE),
     COMBO(combo1, KC_ESCAPE),
-    COMBO(combo2, RALT(RCTL(RSFT(KC_GRAVE)))),
-    COMBO(combo3, KC_ESCAPE),
-    COMBO(combo4, KC_ESCAPE),
-    COMBO(combo5, KC_SPACE),
+    COMBO(combo2, KC_QUOTE),
+    COMBO(combo3, KC_GRAVE),
+    COMBO(combo4, KC_TAB),
+    COMBO(combo5, KC_LBRC),
+    COMBO(combo6, KC_RBRC),
 };
+
+#ifdef COMBO_MUST_TAP_PER_COMBO
+bool get_combo_must_tap(uint16_t combo_index, combo_t *combo) {
+    // If you want all combos to be tap-only, just uncomment the next line
+    // return true
+
+    // If you want *all* combos, that have Mod-Tap/Layer-Tap/Momentary keys in its chord, to be tap-only, this is for you:
+    uint16_t key;
+    uint8_t idx = 0;
+    while ((key = pgm_read_word(&combo->keys[idx])) != COMBO_END) {
+        switch (key) {
+            case QK_MOD_TAP...QK_MOD_TAP_MAX:
+            case QK_LAYER_TAP...QK_LAYER_TAP_MAX:
+            case QK_MOMENTARY...QK_MOMENTARY_MAX:
+                return true;
+        }
+        idx += 1;
+    }
+    return false;
+}
+#endif
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case MT(MOD_LALT, KC_A):
+            return TAPPING_TERM + 50;
+        case MT(MOD_LSFT, KC_R):
+            return TAPPING_TERM -25;
+        case LT(1, KC_S):
+            return TAPPING_TERM -25;
+        case MT(MOD_RSFT, KC_I):
+            return TAPPING_TERM -25;
+        case LT(5, KC_SPACE):
+            return TAPPING_TERM + 50;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  // --- New: deactivate mouse layer on MT/LT holds ---
+  if (record->event.pressed) {
+    switch (keycode) {
+      case QK_MOD_TAP ... QK_MOD_TAP_MAX:
+      case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
+        layer_off(3);
+        break;
+    }
+  }
+
+  return true;
+}
+
 
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
