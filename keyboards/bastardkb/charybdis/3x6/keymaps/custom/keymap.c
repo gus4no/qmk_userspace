@@ -46,10 +46,10 @@ static uint16_t auto_pointer_layer_timer = 0;
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_BASE] = LAYOUT(
-    KC_TRNS, KC_Q,               KC_W,               KC_F,                 KC_P,                KC_B,               KC_J,           KC_L,               KC_U,           KC_Y,               KC_SCLN,            KC_TRNS,
-    KC_TRNS, MT(MOD_LALT, KC_A), MT(MOD_LSFT, KC_R), LT(1, KC_S),          MT(MOD_LGUI, KC_T),  KC_G,               KC_M,           MT(MOD_RGUI, KC_N), LT(2, KC_E),    MT(MOD_RSFT, KC_I), MT(MOD_RCTL, KC_O), KC_TRNS,
-    KC_TRNS, KC_Z,               KC_X,               KC_C,                 MT(MOD_MEH, KC_D),   KC_V,               KC_K,           MT(MOD_MEH, KC_H),  KC_COMMA,       KC_DOT,             KC_SLASH,           KC_TRNS,
-                                                     MT(MOD_LGUI, KC_ENT), OSM(MOD_LSFT),       KC_TRNS,            KC_BSPC,        LT(4, KC_SPACE)
+    KC_TRNS, KC_Q,               KC_W,               KC_F,                 KC_P,                 KC_B,               KC_J,           KC_L,               KC_U,           KC_Y,               KC_SCLN,            KC_TRNS,
+    KC_TRNS, MT(MOD_LALT, KC_A), MT(MOD_LSFT, KC_R), LT(1, KC_S),          MT(MOD_LGUI, KC_T),   KC_G,               KC_M,           MT(MOD_RGUI, KC_N), LT(2, KC_E),    MT(MOD_RSFT, KC_I), MT(MOD_RCTL, KC_O), KC_TRNS,
+    KC_TRNS, KC_Z,               KC_X,               KC_C,                 MT(MOD_MEH, KC_D),    KC_V,               KC_K,           MT(MOD_MEH, KC_H),  KC_COMMA,       KC_DOT,             KC_SLASH,           KC_TRNS,
+                                                     KC_TRANS,             MT(MOD_LGUI, KC_ENT), OSM(MOD_LSFT),      KC_BSPC,        LT(4, KC_SPACE)
   ),
   [LAYER_LOWER] = LAYOUT(
     QK_BOOT, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_PIPE,        KC_7,           KC_8,           KC_9,           KC_BSLS,       QK_BOOT,
