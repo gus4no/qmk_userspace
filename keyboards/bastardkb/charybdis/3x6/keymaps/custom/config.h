@@ -54,6 +54,7 @@
 #define COMBO_ONLY_FROM_LAYER 0
 #define COMBO_COUNT 7
 #define TAPPING_TERM_PER_KEY
+#define ONESHOT_TIMEOUT 1000
 // Smaller = faster scrolling (less movement per tick)
 #define CHARYBDIS_SCROLL_DIVISOR_H 80
 #define CHARYBDIS_SCROLL_DIVISOR_V 70
