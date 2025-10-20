@@ -187,6 +187,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
   }
 
+   // --- Reset auto pointer timer if a mouse button is clicked ---
+    switch (keycode) {
+        case KC_BTN1:
+        case KC_BTN2:
+        case KC_BTN3:
+        case KC_BTN4:
+        case KC_BTN5:
+        case DPI_MOD:
+        case DPI_RMOD:
+            auto_pointer_layer_timer = timer_read();
+            break;
+    }
+
   return true;
 }
 
