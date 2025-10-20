@@ -65,8 +65,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [LAYER_POINTER] = LAYOUT(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               DPI_MOD, DPI_RMOD, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS,  DRGSCRL, KC_TRNS, LGUI(KC_RBRC), KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_BTN1,  KC_BTN3, KC_BTN2, LGUI(KC_LBRC), KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS,  KC_BTN3, KC_TRNS, LGUI(KC_RBRC), KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_BTN1,  DRGSCRL, KC_BTN2, LGUI(KC_LBRC), KC_TRNS,
                                KC_TRNS, DRGSCRL, KC_TRNS,                               KC_TRNS, KC_TRNS
   ),
 };
@@ -182,7 +182,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
       case QK_MOD_TAP ... QK_MOD_TAP_MAX:
       case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
-        layer_off(3);
+        layer_off(LAYER_POINTER);
         break;
     }
   }
