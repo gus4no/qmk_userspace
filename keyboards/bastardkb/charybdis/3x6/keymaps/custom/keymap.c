@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               DPI_MOD, DPI_RMOD, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS,  KC_BTN3, KC_TRNS, LGUI(KC_RBRC), KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_BTN1,  DRGSCRL, KC_BTN2, LGUI(KC_LBRC), KC_TRNS,
-                               KC_TRNS, DRGSCRL, KC_TRNS,                               KC_TRNS, KC_TRNS
+                               KC_TRNS, KC_TRNS, DRGSCRL,                               KC_TRNS, KC_TRNS
   ),
 };
 // clang-format on
