@@ -49,25 +49,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_Q,               KC_W,               KC_F,                KC_P,                 KC_B,               KC_J,           KC_L,               KC_U,           KC_Y,               KC_SCLN,            KC_TRNS,
     KC_TRNS, MT(MOD_LALT, KC_A), MT(MOD_LSFT, KC_R), LT(1, KC_S),         MT(MOD_LGUI, KC_T),   KC_G,               KC_M,           MT(MOD_RGUI, KC_N), LT(2, KC_E),    MT(MOD_RSFT, KC_I), MT(MOD_RCTL, KC_O), KC_TRNS,
     KC_TRNS, KC_Z,               KC_X,               KC_C,                MT(MOD_MEH, KC_D),    KC_V,               KC_K,           MT(MOD_MEH, KC_H),  KC_COMMA,       KC_DOT,             KC_SLASH,           KC_TRNS,
-                                                     KC_TRNS,             MT(MOD_LGUI, KC_ENT), OSM(MOD_LSFT),      KC_BSPC,        KC_SPACE
+                                                     KC_TAB,             MT(MOD_LGUI, KC_ENT), OSM(MOD_LSFT),      KC_BSPC,        KC_SPACE
   ),
   [LAYER_LOWER] = LAYOUT(
     QK_BOOT, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_PIPE,        KC_7,           KC_8,           KC_9,           KC_BSLS,       QK_BOOT,
     KC_TRNS, KC_TRNS, KC_LEFT_SHIFT,  KC_TRNS, KC_LEFT_GUI, KC_TRNS,                                 KC_EQUAL,       KC_4,           KC_5,           KC_6,           KC_MINUS,      KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_PLUS,        KC_1,           KC_2,           KC_3,           KC_UNDS,       KC_TRNS,
-                                      KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_TRNS, KC_0
+                                      KC_GRAVE, KC_TRNS,     KC_TRNS,                                 KC_TRNS, KC_0
   ),
   [LAYER_RAISE] = LAYOUT(
     QK_BOOT, KC_TRNS, KC_LBRC,     KC_UP,          KC_RBRC,        KC_MNXT,                                KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS,        KC_TRNS, QK_BOOT,
     KC_TRNS, KC_TRNS, KC_LEFT,     KC_DOWN,        KC_RIGHT,       KC_MPLY,                                KC_TRNS, KC_RIGHT_GUI, KC_TRNS, KC_RIGHT_SHIFT, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_VOLD,     KC_MUTE,        KC_VOLU,        KC_MPRV,                                KC_TRNS, KC_RIGHT_ALT, KC_TRNS, KC_RIGHT_CTRL,  KC_TRNS, KC_TRNS,
-                                   KC_GRAVE,       KC_TRNS,        KC_TRNS,                                KC_TRNS, KC_TRNS
+                                   KC_TRNS,        KC_TRNS,        KC_TRNS,                                KC_TRNS, KC_TRNS
   ),
   [LAYER_POINTER] = LAYOUT(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               DPI_MOD, DPI_RMOD, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS,  KC_BTN3, KC_TRNS, LGUI(KC_RBRC), KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_BTN1,  DRGSCRL, KC_BTN2, LGUI(KC_LBRC), KC_TRNS,
-                               KC_TRNS, KC_TRNS, DRGSCRL,                               KC_TRNS, KC_TRNS
+                               DRGSCRL, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS
   ),
 };
 // clang-format on
@@ -117,7 +117,7 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
   'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R',
   'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R',
   'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R',
-  '*', '*', '*', '*', '*'
+  '*', '*', '*', '*', '*', '*'
 );
 
 const uint16_t PROGMEM combo0[] = { KC_W, KC_F, KC_P, COMBO_END};
@@ -176,32 +176,34 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   // --- New: deactivate mouse layer on MT/LT holds ---
-  if (record->event.pressed) {
-    switch (keycode) {
-      case QK_MOD_TAP ... QK_MOD_TAP_MAX:
-      case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
-        layer_off(LAYER_POINTER);
-        break;
-    }
-  }
+//   if (record->event.pressed) {
+//     switch (keycode) {
+//       case QK_MOD_TAP ... QK_MOD_TAP_MAX:
+//       case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
+//         layer_off(LAYER_POINTER);
+//         break;
+//     }
+//   }
 
    // --- Reset auto pointer timer if a mouse button is clicked ---
-    switch (keycode) {
-        case KC_BTN1:
-        case KC_BTN2:
-        case KC_BTN3:
-        case KC_BTN4:
-        case KC_BTN5:
-        case DPI_MOD:
-        case DPI_RMOD:
-            auto_pointer_layer_timer = timer_read();
-            break;
-    }
+    // switch (keycode) {
+    //     case KC_BTN1:
+    //     case KC_BTN2:
+    //     case KC_BTN3:
+    //     case KC_BTN4:
+    //     case KC_BTN5:
+    //     case DPI_MOD:
+    //     case DPI_RMOD:
+    //       if (layer_state_is(LAYER_POINTER)) {
+    //         auto_pointer_layer_timer = timer_read();
+    //       }
+    //       break;
+    // }
 
-  return true;
-}
+//   return true;
+// }
 
 
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
