@@ -186,16 +186,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  // --- New: deactivate mouse layer on MT/LT holds ---
-  if (record->event.pressed) {
-    switch (keycode) {
-      case QK_MOD_TAP ... QK_MOD_TAP_MAX:
-      case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
-        layer_off(LAYER_POINTER);
-        break;
-    }
-  }
-
    // --- Reset auto pointer timer if a mouse button is clicked ---
     switch (keycode) {
         case KC_BTN1:
