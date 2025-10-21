@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     QK_BOOT, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_PIPE,        KC_7,           KC_8,           KC_9,           KC_BSLS,       QK_BOOT,
     KC_TRNS, KC_TRNS, KC_LEFT_SHIFT,  KC_TRNS, KC_LEFT_GUI, KC_TRNS,                                 KC_EQUAL,       KC_4,           KC_5,           KC_6,           KC_MINUS,      KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_PLUS,        KC_1,           KC_2,           KC_3,           KC_UNDS,       KC_TRNS,
-                                      KC_GRAVE, KC_TRNS,     KC_TRNS,                                 KC_TRNS, KC_0
+                                      KC_GRAVE, KC_TRNS,    KC_TRNS,                                 KC_TRNS, KC_0
   ),
   [LAYER_RAISE] = LAYOUT(
     QK_BOOT, KC_TRNS, KC_LBRC,     KC_UP,          KC_RBRC,        KC_MNXT,                                KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS,        KC_TRNS, QK_BOOT,
@@ -117,7 +117,7 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
   'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R',
   'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R',
   'L', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'R',
-  '*', '*', '*', '*', '*', '*'
+  '*', '*', '*', '*', '*'
 );
 
 const uint16_t PROGMEM combo0[] = { KC_W, KC_F, KC_P, COMBO_END};
