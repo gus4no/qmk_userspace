@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [LAYER_POINTER] = LAYOUT(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, LGUI(KC_RBRC), DPI_MOD,
+    KC_TRNS, KC_TRNS, KC_LEFT_SHIFT, MO(LAYER_RAISE), KC_LEFT_GUI, KC_TRNS,             KC_TRNS, KC_RIGHT_GUI,  MO(LAYER_LOWER), KC_RIGHT_SHIFT, LGUI(KC_RBRC), DPI_MOD,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_BTN1,  KC_BTN3, KC_BTN2, LGUI(KC_LBRC), DPI_RMOD,
                                KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS
   ),
@@ -75,7 +75,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #ifdef POINTING_DEVICE_ENABLE
 #    ifdef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
-    if (abs(mouse_report.x) > CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD || abs(mouse_report.y) > CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD) {
+    // --- accumulation method example ---
+    static int16_t cum_dx = 0;
+    static int16_t cum_dy = 0;
+
+    // Add the current report deltas
+    cum_dx += mouse_report.x;
+    cum_dy += mouse_report.y;
+    if (abs(cum_dx) > CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD || abs(cum_dy) > CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD) {
         if (auto_pointer_layer_timer == 0) {
             layer_on(LAYER_POINTER);
 #        ifdef RGB_MATRIX_ENABLE
@@ -84,6 +91,8 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
 #        endif // RGB_MATRIX_ENABLE
         }
         auto_pointer_layer_timer = timer_read();
+        cum_dx = 0;
+        cum_dy = 0;
     }
     return mouse_report;
 }
