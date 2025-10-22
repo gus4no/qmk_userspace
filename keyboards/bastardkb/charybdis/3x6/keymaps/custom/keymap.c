@@ -49,25 +49,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_Q,               KC_W,               KC_F,                KC_P,                 KC_B,               KC_J,           KC_L,               KC_U,           KC_Y,               KC_SCLN,            KC_TRNS,
     KC_TRNS, MT(MOD_LALT, KC_A), MT(MOD_LSFT, KC_R), LT(1, KC_S),         MT(MOD_LGUI, KC_T),   KC_G,               KC_M,           MT(MOD_RGUI, KC_N), LT(2, KC_E),    MT(MOD_RSFT, KC_I), MT(MOD_RCTL, KC_O), KC_TRNS,
     KC_TRNS, KC_Z,               KC_X,               KC_C,                MT(MOD_MEH, KC_D),    KC_V,               KC_K,           MT(MOD_MEH, KC_H),  KC_COMMA,       KC_DOT,             KC_SLASH,           KC_TRNS,
-                                                     DRGSCRL,             MT(MOD_LGUI, KC_ENT), OSM(MOD_LSFT),      KC_BSPC,        KC_SPACE
+                                                     KC_TRNS,             MT(MOD_LGUI, KC_ENT), KC_TAB,             KC_BSPC,        KC_SPACE
   ),
   [LAYER_LOWER] = LAYOUT(
     QK_BOOT, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_PIPE,        KC_7,           KC_8,           KC_9,           KC_BSLS,       QK_BOOT,
     KC_TRNS, KC_TRNS, KC_LEFT_SHIFT,  KC_TRNS, KC_LEFT_GUI, KC_TRNS,                                 KC_EQUAL,       KC_4,           KC_5,           KC_6,           KC_MINUS,      KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS,        KC_TRNS, KC_TRNS,     KC_TRNS,                                 KC_PLUS,        KC_1,           KC_2,           KC_3,           KC_UNDS,       KC_TRNS,
-                                      KC_TRNS, KC_TRNS,    KC_TRNS,                                 KC_TRNS, KC_0
+                                      KC_TRNS, KC_TRNS,    KC_TRNS,                                  KC_TRNS, KC_0
   ),
   [LAYER_RAISE] = LAYOUT(
     QK_BOOT, KC_TRNS, KC_LBRC,     KC_UP,          KC_RBRC,        KC_MNXT,                                KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS,        KC_TRNS, QK_BOOT,
-    KC_TRNS, KC_TRNS, KC_LEFT,     KC_DOWN,        KC_RIGHT,       KC_MPLY,                                KC_TRNS, KC_RIGHT_GUI, KC_TRNS, KC_RIGHT_SHIFT, KC_TRNS, KC_TRNS,
+    EEP_RST, KC_TRNS, KC_LEFT,     KC_DOWN,        KC_RIGHT,       KC_MPLY,                                KC_TRNS, KC_RIGHT_GUI, KC_TRNS, KC_RIGHT_SHIFT, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_VOLD,     KC_MUTE,        KC_VOLU,        KC_MPRV,                                KC_TRNS, KC_RIGHT_ALT, KC_TRNS, KC_RIGHT_CTRL,  KC_TRNS, KC_TRNS,
                                    KC_TRNS,        KC_TRNS,        KC_TRNS,                                KC_TRNS, KC_TRNS
   ),
   [LAYER_POINTER] = LAYOUT(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_LEFT_SHIFT, MO(LAYER_RAISE), KC_LEFT_GUI, KC_TRNS,             KC_TRNS, KC_RIGHT_GUI,  MO(LAYER_LOWER), KC_RIGHT_SHIFT, LGUI(KC_RBRC), DPI_MOD,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_BTN1,  KC_BTN3, KC_BTN2, LGUI(KC_LBRC), DPI_RMOD,
-                               KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, LGUI(KC_RBRC), DPI_MOD,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_BTN1, KC_BTN3, KC_BTN2, LGUI(KC_LBRC), DPI_RMOD,
+                               KC_TRNS, KC_TRNS, DRGSCRL,                               KC_TRNS, KC_TRNS
   ),
 };
 // clang-format on
@@ -133,18 +134,18 @@ const uint16_t PROGMEM combo0[] = { KC_W, KC_F, KC_P, COMBO_END};
 const uint16_t PROGMEM combo1[] = { KC_U, KC_Y, KC_L, COMBO_END};
 const uint16_t PROGMEM combo2[] = { KC_U, KC_Y, COMBO_END};
 const uint16_t PROGMEM combo3[] = { KC_W, KC_F, COMBO_END};
-const uint16_t PROGMEM combo4[] = { MT(MOD_LSFT, KC_R), LT(1, KC_S), COMBO_END};
-const uint16_t PROGMEM combo5[] = { MT(MOD_RGUI, KC_N), LT(2, KC_E), COMBO_END};
-const uint16_t PROGMEM combo6[] = { LT(2, KC_E), MT(MOD_RSFT, KC_I), COMBO_END};
+const uint16_t PROGMEM combo4[] = { MT(MOD_RGUI, KC_N), LT(2, KC_E), COMBO_END};
+const uint16_t PROGMEM combo5[] = { LT(2, KC_E), MT(MOD_RSFT, KC_I), COMBO_END};
+const uint16_t PROGMEM combo6[] = { MT(MOD_LSFT, KC_R), MT(MOD_RSFT, KC_I), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_ESCAPE),
     COMBO(combo1, KC_ESCAPE),
     COMBO(combo2, KC_QUOTE),
     COMBO(combo3, KC_GRAVE),
-    COMBO(combo4, KC_TAB),
-    COMBO(combo5, KC_LBRC),
-    COMBO(combo6, KC_RBRC),
+    COMBO(combo4, KC_LBRC),
+    COMBO(combo5, KC_RBRC),
+    COMBO(combo6, OSM(MOD_LSFT)),
 };
 
 #ifdef COMBO_MUST_TAP_PER_COMBO
