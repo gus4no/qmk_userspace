@@ -52,7 +52,7 @@
 #define PERMISSIVE_HOLD
 #define COMBO_MUST_TAP_PER_COMBO
 #define COMBO_ONLY_FROM_LAYER 0
-#define COMBO_COUNT 7
+#define COMBO_COUNT 8
 #define TAPPING_TERM_PER_KEY
 #define ONESHOT_TIMEOUT 1000
 // Smaller = faster scrolling (less movement per tick)

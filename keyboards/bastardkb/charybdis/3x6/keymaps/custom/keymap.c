@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     QK_BOOT, KC_TRNS, KC_LBRC,     KC_UP,          KC_RBRC,        KC_MNXT,                                KC_TRNS, KC_TRNS,      KC_TRNS, KC_TRNS,        KC_TRNS, QK_BOOT,
     KC_TRNS, KC_TRNS, KC_LEFT,     KC_DOWN,        KC_RIGHT,       KC_MPLY,                                KC_TRNS, KC_RIGHT_GUI, KC_TRNS, KC_RIGHT_SHIFT, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_VOLD,     KC_MUTE,        KC_VOLU,        KC_MPRV,                                KC_TRNS, KC_RIGHT_ALT, KC_TRNS, KC_RIGHT_CTRL,  KC_TRNS, KC_TRNS,
-                                   KC_TRNS,        KC_TRNS,        KC_TRNS,                                KC_TRNS, KC_TRNS
+                                   KC_TRNS,        KC_TRNS,        KC_GRAVE                                KC_TRNS, KC_TRNS
   ),
   [LAYER_POINTER] = LAYOUT(
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -137,6 +137,7 @@ const uint16_t PROGMEM combo3[] = { KC_W, KC_F, COMBO_END};
 const uint16_t PROGMEM combo4[] = { MT(MOD_RGUI, KC_N), LT(2, KC_E), COMBO_END};
 const uint16_t PROGMEM combo5[] = { LT(2, KC_E), MT(MOD_RSFT, KC_I), COMBO_END};
 const uint16_t PROGMEM combo6[] = { MT(MOD_LSFT, KC_R), MT(MOD_RSFT, KC_I), COMBO_END};
+const uint16_t PROGMEM combo7[] = { MT(MOD_LSFT, KC_R), LT(1, KC_S), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_ESCAPE),
@@ -146,6 +147,7 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo4, KC_LBRC),
     COMBO(combo5, KC_RBRC),
     COMBO(combo6, OSM(MOD_LSFT)),
+    COMBO(combo7, KC_TAB)
 };
 
 #ifdef COMBO_MUST_TAP_PER_COMBO
