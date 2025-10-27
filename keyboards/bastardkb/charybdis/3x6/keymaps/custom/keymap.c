@@ -188,6 +188,13 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    // --- Exit pointer layer on ESC ---
+    if (record->event.pressed) {
+        if (keycode == KC_ESC && layer_state_is(LAYER_POINTER)) {
+            layer_off(LAYER_POINTER);
+            auto_pointer_layer_timer = 0;
+        }
+    }
    // --- Reset auto pointer timer if a mouse button is clicked ---
     switch (keycode) {
         case KC_BTN1:
