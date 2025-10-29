@@ -21,6 +21,7 @@ enum charybdis_keymap_layers {
     LAYER_LOWER,
     LAYER_RAISE,
     LAYER_POINTER,
+    LAYER_SYM,
 };
 
 /** \brief Automatically enable sniping-mode on the pointer layer. */
@@ -68,6 +69,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, LGUI(KC_RBRC), DPI_MOD,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_BTN1, KC_BTN3, KC_BTN2, LGUI(KC_LBRC), DPI_RMOD,
                                DRGSCRL, KC_TRNS, KC_TRNS,                               KC_TRNS, KC_TRNS
+  ),
+  [LAYER_SYM] = LAYOUT(
+    KC_TRNS, MOD_LSFT(KC_1), MOD_LSFT(KC_2), MOD_LSFT(KC_LBRC), MOD_LSFT(KC_RBRC), MOD_LSFT(7),                       KC_PIPE,        KC_7,           KC_8,           KC_9,           KC_BSLS,       QK_BOOT,
+    KC_TRNS, MOD_LSFT(KC_3), MOD_LSFT(KC_4), MOD_LSFT(KC_9),    MOD_LSFT(KC_0),    MOD_LSFT(KC_COMMA),                KC_EQUAL,       KC_4,           KC_5,           KC_6,           KC_MINUS,      KC_TRNS,
+    KC_TRNS, MOD_LSFT(KC_5), MOD_LSFT(KC_6), KC_LBRC,           KC_RBRC,           MOD_LSFT(KC_DOT),                  KC_PLUS,        KC_1,           KC_2,           KC_3,           KC_UNDS,       KC_TRNS,
+                                             DRGSCRL,            KC_TRNS,           KC_TRNS,                           KC_TRNS,        KC_0
   ),
 };
 // clang-format on
