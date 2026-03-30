@@ -64,10 +64,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_TRNS,        KC_TRNS,        KC_GRAVE,                               KC_TRNS, KC_TRNS
   ),
   [LAYER_POINTER] = LAYOUT(
-    KC_TRNS, KC_TRNS, KC_TRNS, DPI_MOD,  KC_TRNS,                               KC_TRNS, DPI_MOD,  KC_TRNS, KC_TRNS, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,                               KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, LGUI(KC_RBRC),
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,                               KC_TRNS, KC_BTN1,  KC_BTN3, KC_BTN2, LGUI(KC_LBRC),
-                      DRGSCRL, KC_TRNS,  KC_TRNS,                               KC_TRNS, DPI_RMOD
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,                               KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,                               KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,                               KC_TRNS, KC_BTN1,  KC_BTN3, KC_BTN2, KC_TRNS,
+                      DRGSCRL, KC_TRNS,  KC_TRNS,                               KC_TRNS, KC_TRNS
   ),
 };
 // clang-format on
@@ -136,6 +136,7 @@ const uint16_t PROGMEM combo3[] = { KC_U, KC_Y, COMBO_END};
 const uint16_t PROGMEM combo4[] = { MT(MOD_LSFT, KC_R), MT(MOD_RSFT, KC_I), COMBO_END};
 const uint16_t PROGMEM combo5[] = { KC_COMMA, KC_DOT, COMBO_END};
 const uint16_t PROGMEM combo6[] = { KC_W, KC_F, COMBO_END};
+const uint16_t PROGMEM combo7[] = { KC_H, KC_COMMA, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_ESCAPE),
@@ -144,7 +145,8 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo3, KC_QUOTE),
     COMBO(combo4, OSM(MOD_LSFT)),
     COMBO(combo5, DRGSCRL),
-    COMBO(combo6, KC_GRV)
+    COMBO(combo6, KC_GRV),
+    COMBO(combo7, KC_MEH)
 };
 
 #ifdef COMBO_MUST_TAP_PER_COMBO
